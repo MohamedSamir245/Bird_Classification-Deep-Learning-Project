@@ -12,6 +12,10 @@
     - [Install Dependencies](#install-dependencies)
   - [Project Structure](#project-structure)
   - [Dependencies](#dependencies)
+- [Usage](#usage)
+  - [Testing the Model](#testing-the-model)
+  - [Running the Executable Program](#running-the-executable-program)
+  - [Example](#example)
 - [Data preparation](#data-preparation)
   - [Data Collection](#data-collection)
     - [Dataset Information:](#dataset-information)
@@ -149,6 +153,32 @@ The following dependencies are required to run this project. Make sure to instal
 - [traitlets==5.14.1](https://pypi.org/project/traitlets/)
 - [typing_extensions==4.9.0](https://pypi.org/project/typing-extensions/)
 
+# Usage
+
+## Testing the Model
+
+To test the model using the provided Python code, follow these steps:
+
+1. Download the code folder from the [UI](https://github.com/MohamedSamir245/Bird_Classification/tree/master/UI) directory.
+
+2. Run the `main.py` file to execute the program.
+
+3. The program will open a graphical user interface (GUI) where you can interact with the model.
+
+## Running the Executable Program
+
+Alternatively, you can download the precompiled executable program.
+
+1. Download the EXE folder from the [UI](https://github.com/MohamedSamir245/Bird_Classification/tree/master/UI) directory.
+
+2. Run the program on your local machine by double-clicking the executable file.
+
+3. The program will open a graphical user interface (GUI) where you can interact with the model.
+
+## Example
+
+![Executable Program](reports/figures/UI.png)
+
 # Data preparation
 
 ## Data Collection
@@ -275,6 +305,7 @@ To further enhance the model's performance, the top 22 layers of the Inception_V
 ## Model Comparison
 
 Comparing the performance of the original model and the fine-tuned model reveals insights into the effectiveness of the fine-tuning process. The figures above depict the accuracies and losses for both models over epochs, providing a visual representation of their respective performances.
+
 
 # Acknowledgements
 
