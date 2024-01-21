@@ -40,21 +40,17 @@
 <a id="introduction"></a>
 # Introduction
 
-<a id="project-overview"></a>
 ## Project Overview
 
-Unleash your inner ornithologist with this deep learning model! Trained on 90,000+ images, it accurately identifies 525+ bird species with over 94% accuracy! Data augmentation and advanced training techniques ensure top-notch performance.
+This is a deep learning model trained on 90,000+ images, it accurately identifies 525+ bird species with over 94% validation accuracy! Data augmentation and advanced training techniques ensure top-notch performance.
 
-<a id="purpose"></a>
 ## Purpose
 
 This is a practical application inspired by Chapter 14 of the "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow" book, focusing on deep computer vision using Convolutional Neural Networks (CNNs).
 
 
-<a id="getting-started"></a>
 # Getting Started
 
-<a id="installation"></a>
 ## Installation
 To get started with this project, follow the steps below for a seamless installation of dependencies.
 
@@ -89,7 +85,6 @@ source venv/bin/activate
 make requirements
 ```
 
-<a id="project-structure"></a>
 ## Project Structure
 
     base
@@ -139,7 +134,6 @@ make requirements
     └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
 
 
-<a id="dependencies"></a>
 ## Dependencies
 
 The following dependencies are required to run this project. Make sure to install them before getting started:
@@ -155,10 +149,8 @@ The following dependencies are required to run this project. Make sure to instal
 - [traitlets==5.14.1](https://pypi.org/project/traitlets/)
 - [typing_extensions==4.9.0](https://pypi.org/project/typing-extensions/)
 
-<a id="data-preparation"></a>
 # Data preparation
 
-<a id="data-collection"></a>
 ## Data Collection
 
 The dataset used in this project was obtained from Kaggle. It consists of approximately 90,000 images, generously provided by Kaggle, covering a diverse range of bird species.
@@ -175,8 +167,6 @@ The dataset used in this project was obtained from Kaggle. It consists of approx
 Before diving into the model development, a thorough exploration of the dataset was conducted to understand its structure, the distribution of bird species, and potential challenges. Exploratory Data Analysis (EDA) insights can be found in the [Exploratory Data Analysis](#exploratory-data-analysis) section.
 
 Make sure to download the dataset from the provided Kaggle URL before running the code in this repository.
-
-
 
 ## Data Augmentation
 
