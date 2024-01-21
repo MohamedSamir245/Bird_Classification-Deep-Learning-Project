@@ -22,9 +22,9 @@
     - [Data Exploration:](#data-exploration)
   - [Data Augmentation](#data-augmentation)
 - [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
-    - [Sample Images](#sample-images)
-    - [Class Distribution](#class-distribution)
-    - [Error Level Analysis (ELA) Images](#error-level-analysis-ela-images)
+  - [Sample Images](#sample-images)
+  - [Class Distribution](#class-distribution)
+  - [Error Level Analysis (ELA) Images](#error-level-analysis-ela-images)
 - [Model Development](#model-development)
   - [Model Architecture](#model-architecture)
   - [Training](#training)
@@ -39,9 +39,11 @@
       - [Training and Validation Accuracy After Fine-Tuning](#training-and-validation-accuracy-after-fine-tuning)
       - [Training and Validation Loss After Fine-Tuning](#training-and-validation-loss-after-fine-tuning)
   - [Model Comparison](#model-comparison)
+- [My Kaggle Notebook](#my-kaggle-notebook)
 - [Acknowledgements](#acknowledgements)
 
 <a id="introduction"></a>
+
 # Introduction
 
 ## Project Overview
@@ -52,10 +54,10 @@ This is a deep learning model trained on 90,000+ images, it accurately identifie
 
 This is a practical application inspired by Chapter 14 of the "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow" book, focusing on deep computer vision using Convolutional Neural Networks (CNNs).
 
-
 # Getting Started
 
 ## Installation
+
 To get started with this project, follow the steps below for a seamless installation of dependencies.
 
 ### Prerequisites
@@ -73,6 +75,7 @@ cd your_project
 ```
 
 ### Create Virtual Environment (Optional)
+
 ```
 # Create a virtual environment
 virtualenv venv
@@ -85,6 +88,7 @@ source venv/bin/activate
 ```
 
 ### Install Dependencies
+
 ```
 make requirements
 ```
@@ -124,7 +128,7 @@ make requirements
     │   ├── data           <- Scripts to download or generate data
     │   │   ├── explore.py
     │   │   ├── functions.py
-    │   
+    │  
     │   ├── models         <- Scripts to train models and then use trained models to make
     │   │   │                 predictions
     │   │   ├── predict_model.py
@@ -136,7 +140,6 @@ make requirements
     │       └── visualize_results.py
     │
     └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
-
 
 ## Dependencies
 
@@ -214,25 +217,25 @@ data_augmentation = tf.keras.Sequential([
 ])
 ```
 
-
 # Exploratory Data Analysis (EDA)
 
-
 ### Sample Images
+
 Below are sample images from the dataset, providing a visual representation of the input data:
 
 ![Sample Images](reports/figures/sample_images.png)
 
 ### Class Distribution
+
 To understand the class distribution and assess the balance of the dataset, the distribution of the top 20 labels is visualized in the figure below:
 
 ![Top 20 Labels Distribution](reports/figures/top20_labels_distribution.png)
 
 ### Error Level Analysis (ELA) Images
+
 Error Level Analysis (ELA) images were generated to observe the impact of changing image quality on the dataset. The figure below displays ELA images for a subset of the dataset:
 
 ![ELA Images](reports/figures/ela_example.png)
-
 
 # Model Development
 
@@ -243,17 +246,17 @@ The core architecture of the model is based on the Inception_V3 neural network, 
 ```plaintext
     Model: "sequential_1"
 _________________________________________________________________
- Layer (type)                Output Shape              Param #   
+ Layer (type)                Output Shape              Param #
 =================================================================
- sequential (Sequential)     (None, 224, 224, 3)       0         
-                                                                 
- inception_v3 (Functional)   (None, None, None, 2048)  21802784  
-                                                                 
- global_average_pooling_laye  (None, 2048)             0         
- r (GlobalAveragePooling2D)                                      
-                                                                 
- output-layer (Dense)        (None, 525)               1075725   
-                                                                 
+ sequential (Sequential)     (None, 224, 224, 3)       0
+
+ inception_v3 (Functional)   (None, None, None, 2048)  21802784
+
+ global_average_pooling_laye  (None, 2048)             0
+ r (GlobalAveragePooling2D)
+
+ output-layer (Dense)        (None, 525)               1075725
+
 =================================================================
 Total params: 22,878,509
 Trainable params: 1,075,725
@@ -275,12 +278,9 @@ The model underwent an initial training phase using the provided dataset. The tr
 
 - **TensorBoard:** The TensorBoard callback played a crucial role in visualizing and monitoring the training process, providing valuable insights into model behavior and performance.
 
-
 ## Fine-Tuning
 
 To further enhance the model's performance, the top 22 layers of the Inception_V3 model were fine-tuned. This process involved adjusting the weights of these layers based on the specific requirements of the project.
-
-
 
 # Results
 
@@ -293,17 +293,21 @@ To further enhance the model's performance, the top 22 layers of the Inception_V
 ### Original Model Performance
 
 #### Training and Validation Accuracy
+
 ![Original Model Training and Validation Accuracy](reports/figures/accuracy_for_original_model_tensorboard.png)
 
 #### Training and Validation Loss
+
 ![Original Model Training and Validation Loss](reports/figures/loss_for_original_model_tensorboard.png)
 
 ### Fine-Tuned Model Performance
 
 #### Training and Validation Accuracy After Fine-Tuning
+
 ![Fine-Tuned Model Training and Validation Accuracy](reports/figures/accuracy_for_tuned_model_tensorboard.png)
 
 #### Training and Validation Loss After Fine-Tuning
+
 ![Fine-Tuned Model Training and Validation Loss](reports/figures/loss_for_tuned_model_tensorboard.png)
 
 ## Model Comparison
