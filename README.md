@@ -18,24 +18,22 @@
     - [Data Exploration:](#data-exploration)
   - [Data Augmentation](#data-augmentation)
 - [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
-  - [Data Visualization](#data-visualization)
-  - [Statistical Analysis](#statistical-analysis)
-  - [Correlation Analysis](#correlation-analysis)
+    - [Sample Images](#sample-images)
+    - [Class Distribution](#class-distribution)
+    - [Error Level Analysis (ELA) Images](#error-level-analysis-ela-images)
 - [Model Development](#model-development)
   - [Model Architecture](#model-architecture)
   - [Training](#training)
-  - [Hyperparameter Tuning](#hyperparameter-tuning)
-  - [Evaluation Metrics](#evaluation-metrics)
-- [Results and Discussion](#results-and-discussion)
+  - [Fine-Tuning](#fine-tuning)
+- [Results](#results)
   - [Model Performance](#model-performance)
-  - [Comparisons](#comparisons)
-  - [Limitations](#limitations)
-- [Documentation](#documentation)
-  - [Code Documentation](#code-documentation)
-  - [Model Documentation](#model-documentation)
-- [Contributing](#contributing)
-  - [Code of Conduct](#code-of-conduct)
-  - [Submitting Changes](#submitting-changes)
+    - [Original Model Performance](#original-model-performance)
+      - [Training and Validation Accuracy](#training-and-validation-accuracy)
+      - [Training and Validation Loss](#training-and-validation-loss)
+    - [Fine-Tuned Model Performance](#fine-tuned-model-performance)
+      - [Training and Validation Accuracy After Fine-Tuning](#training-and-validation-accuracy-after-fine-tuning)
+      - [Training and Validation Loss After Fine-Tuning](#training-and-validation-loss-after-fine-tuning)
+  - [Model Comparison](#model-comparison)
 - [Acknowledgements](#acknowledgements)
 
 <a id="introduction"></a>
@@ -194,45 +192,99 @@ data_augmentation = tf.keras.Sequential([
 
 # Exploratory Data Analysis (EDA)
 
-## Data Visualization
 
-## Statistical Analysis
+### Sample Images
+Below are sample images from the dataset, providing a visual representation of the input data:
 
-## Correlation Analysis
+![Sample Images](reports/figures/sample_images.png)
+
+### Class Distribution
+To understand the class distribution and assess the balance of the dataset, the distribution of the top 20 labels is visualized in the figure below:
+
+![Top 20 Labels Distribution](reports/figures/top20_labels_distribution.png)
+
+### Error Level Analysis (ELA) Images
+Error Level Analysis (ELA) images were generated to observe the impact of changing image quality on the dataset. The figure below displays ELA images for a subset of the dataset:
+
+![ELA Images](reports/figures/ela_example.png)
 
 
 # Model Development
 
 ## Model Architecture
 
+The core architecture of the model is based on the Inception_V3 neural network, a powerful convolutional neural network (CNN) commonly used for image classification tasks. Below is an overview of the architecture:
+
+```plaintext
+    Model: "sequential_1"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ sequential (Sequential)     (None, 224, 224, 3)       0         
+                                                                 
+ inception_v3 (Functional)   (None, None, None, 2048)  21802784  
+                                                                 
+ global_average_pooling_laye  (None, 2048)             0         
+ r (GlobalAveragePooling2D)                                      
+                                                                 
+ output-layer (Dense)        (None, 525)               1075725   
+                                                                 
+=================================================================
+Total params: 22,878,509
+Trainable params: 1,075,725
+Non-trainable params: 21,802,784
+_________________________________________________________________
+```
+
 ## Training
 
-## Hyperparameter Tuning
+The model underwent an initial training phase using the provided dataset. The training process incorporated several key aspects to ensure optimal model performance:
 
-## Evaluation Metrics
+- **Data Augmentation:** To boost the model's generalization capabilities, various data augmentation techniques were applied during the training phase.
 
-# Results and Discussion
+- **Checkpoint:** A checkpoint callback was implemented to save the best model configuration after the completion of each training epoch.
+
+- **Early Stopping:** A mechanism was in place to terminate the training process if there was no improvement in the validation loss over a specified number of epochs.
+
+- **Reduced Learning Rate on Plateau:** The learning rate dynamically adjusted downwards if the validation loss reached a plateau, enhancing convergence.
+
+- **TensorBoard:** The TensorBoard callback played a crucial role in visualizing and monitoring the training process, providing valuable insights into model behavior and performance.
+
+
+## Fine-Tuning
+
+To further enhance the model's performance, the top 22 layers of the Inception_V3 model were fine-tuned. This process involved adjusting the weights of these layers based on the specific requirements of the project.
+
+
+
+# Results
 
 ## Model Performance
 
-## Comparisons
+### Original Model Performance
 
-## Limitations
+#### Training and Validation Accuracy
+![Original Model Training and Validation Accuracy](reports/figures/accuracy_for_original_model_tensorboard.png)
 
+#### Training and Validation Loss
+![Original Model Training and Validation Loss](reports/figures/loss_for_original_model_tensorboard.png)
 
-# Documentation
+### Fine-Tuned Model Performance
 
-## Code Documentation
+#### Training and Validation Accuracy After Fine-Tuning
+![Fine-Tuned Model Training and Validation Accuracy](reports/figures/accuracy_for_tuned_model_tensorboard.png)
 
-## Model Documentation
+#### Training and Validation Loss After Fine-Tuning
+![Fine-Tuned Model Training and Validation Loss](reports/figures/loss_for_tuned_model_tensorboard.png)
 
-# Contributing
+## Model Comparison
 
-## Code of Conduct
-
-## Submitting Changes
+Comparing the performance of the original model and the fine-tuned model reveals insights into the effectiveness of the fine-tuning process. The figures above depict the accuracies and losses for both models over epochs, providing a visual representation of their respective performances.
 
 # Acknowledgements
 
+This project wouldn't have been possible without the support, guidance, and contributions from various individuals and organizations. I would like to express my gratitude to:
 
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+- **Author of "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow":** For providing a comprehensive resource that served as the foundation for this project.
+
+- **Kaggle Community:** For providing the dataset used in this project and fostering a collaborative environment for data science enthusiasts.
