@@ -26,6 +26,7 @@
   - [Training](#training)
   - [Fine-Tuning](#fine-tuning)
 - [Results](#results)
+  - [Prediction Example](#prediction-example)
   - [Model Performance](#model-performance)
     - [Original Model Performance](#original-model-performance)
       - [Training and Validation Accuracy](#training-and-validation-accuracy)
@@ -258,6 +259,10 @@ To further enhance the model's performance, the top 22 layers of the Inception_V
 
 
 # Results
+
+## Prediction Example
+
+![Prediction Example](reports/figures/sample_predictions.png)
 
 ## Model Performance
 
