@@ -142,34 +142,38 @@ make requirements
 
 The following dependencies are required to run this project. Make sure to install them before getting started:
 
-- [darkdetect==0.8.0](https://pypi.org/project/darkdetect/)
-- [keras_preprocessing==1.1.2](https://pypi.org/project/keras-preprocessing/)
-- [PyGObject==3.42.1](https://pypi.org/project/PyGObject/)
-- [pytest==7.4.4](https://pypi.org/project/pytest/)
-- [scikit_learn==1.4.0](https://pypi.org/project/scikit-learn/)
-- [seaborn==0.13.1](https://pypi.org/project/seaborn/)
-- [setuptools==68.2.2](https://pypi.org/project/setuptools/)
-- [tkinterDnD==0.0.0](https://pypi.org/project/tkinterDnD/)
-- [traitlets==5.14.1](https://pypi.org/project/traitlets/)
-- [typing_extensions==4.9.0](https://pypi.org/project/typing-extensions/)
+- [darkdetect](https://pypi.org/project/darkdetect/)==0.8.0
+- [keras_preprocessing](https://pypi.org/project/keras-preprocessing/)==1.1.2
+- [PyGObject](https://pypi.org/project/PyGObject/)==3.42.1
+- [pytest](https://pypi.org/project/pytest/)==7.4.4
+- [scikit-learn](https://pypi.org/project/scikit-learn/)==1.4.0
+- [seaborn](https://pypi.org/project/seaborn/)==0.13.1
+- [setuptools](https://pypi.org/project/setuptools/)==68.2.2
+- [tkinterDnD](https://pypi.org/project/tkinterDnD/)==0.0.0
+- [traitlets](https://pypi.org/project/traitlets/)==5.14.1
+- [typing-extensions](https://pypi.org/project/typing-extensions/)==4.9.0
+- [customtkinter](https://pypi.org/project/customtkinter/)==5.2.2
+- [tensorflow](https://pypi.org/project/tensorflow/)==2.15.0
+- [Pillow](https://pypi.org/project/Pillow/)==10.2.0
+- [opencv-python](https://pypi.org/project/opencv-python/)==4.9.0.80
 
 # Usage
 
-## Testing the Model
+To test the model, follow these steps:
 
-To test the model using the provided Python code, follow these steps:
+## Testing the Model Using Python Code (Require [Installation](#installation) steps)
 
-1. Download the code folder from the [UI](https://github.com/MohamedSamir245/Bird_Classification/tree/master/UI) directory.
+1. Download Dependancies and main.py from [GUI](https://github.com/MohamedSamir245/Bird_Classification/tree/master/GUI) folder.
 
 2. Run the `main.py` file to execute the program.
 
 3. The program will open a graphical user interface (GUI) where you can interact with the model.
 
-## Running the Executable Program
+## Running the Executable Program (Doesn't require [Installation](#installation) steps)
 
-Alternatively, you can download the precompiled executable program.
+Alternatively:
 
-1. Download the EXE folder from the [UI](https://github.com/MohamedSamir245/Bird_Classification/tree/master/UI) directory.
+1. Download [GUI](https://github.com/MohamedSamir245/Bird_Classification/tree/master/GUI) folder.
 
 2. Run the program on your local machine by double-clicking the executable file.
 
