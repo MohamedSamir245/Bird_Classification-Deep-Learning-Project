@@ -1,0 +1,2 @@
+model_checkpoint_path: "birds_classification_model_checkpoint"
+all_model_checkpoint_paths: "birds_classification_model_checkpoint"
