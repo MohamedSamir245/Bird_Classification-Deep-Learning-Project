@@ -310,6 +310,9 @@ To further enhance the model's performance, the top 22 layers of the Inception_V
 
 Comparing the performance of the original model and the fine-tuned model reveals insights into the effectiveness of the fine-tuning process. The figures above depict the accuracies and losses for both models over epochs, providing a visual representation of their respective performances.
 
+# My Kaggle Notebook
+[94-valid-acc-inceptionv3](https://www.kaggle.com/code/msamir245/94-valid-acc-inceptionv3)
+
 
 # Acknowledgements
 
